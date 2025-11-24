@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Song List</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #a18cd1, #fbc2eb);
+            margin: 0;
+            padding: 40px;
+            color: #333;
+        }
+
+        h1 {
+            text-align: center;
+            color: #222;
+            margin-bottom: 30px;
+        }
+
+        table {
+            width: 90%;
+            margin: 0 auto;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            animation: fadeIn 0.5s ease;
+        }
+
+        th {
+            background: #6a5acd;
+            color: white;
+            padding: 14px;
+            font-size: 16px;
+        }
+
+        td {
+            padding: 12px;
+            border-bottom: 1px solid #eee;
+            font-size: 14px;
+        }
+
+        tr:hover {
+            background-color: #f3eaff;
+        }
+
+        a {
+            color: #6a5acd;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .add-link {
+            display: block;
+            text-align: center;
+            margin-top: 25px;
+            font-size: 18px;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <h1>All Songs</h1>
+
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>ID</th>
+            <th>Title</th>
+            <th>YouTube URL</th>
+        </tr>
+
+        {% for id, title, url, name in songs %}
+        <tr>
+            <td>{{ name }}</td>
+            <td><a href="/songs/{{ id }}">{{ id }}</a></td>
+            <td>{{ title }}</td>
+            <td><a href="{{ url }}" target="_blank">{{ url }}</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <a class="add-link" href="/add_song">+ Add Another Song</a>
+</body>
+</html>

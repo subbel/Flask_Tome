@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add a Song</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            width: 350px;
+            box-shadow: 0px 8px 20px rgba(0,0,0,0.15);
+            animation: fadeIn 0.5s ease;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 25px;
+            color: #333;
+        }
+
+        label {
+            font-weight: bold;
+            color: #444;
+        }
+
+        input[type="text"],
+        input[type="url"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            margin-bottom: 20px;
+            box-sizing: border-box;
+            font-size: 14px;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            padding: 12px;
+            background-color: #ff6f61;
+            border: none;
+            color: white;
+            font-weight: bold;
+            font-size: 15px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #ff3b2f;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Add a New Song</h1>
+
+        <form method="POST" action="/add_song">
+            <label for="name">Your Name:</label><br>
+            <input type="text" id="name" name="name" required>
+
+            <label for="title">Song Title:</label><br>
+            <input type="text" id="title" name="title" required>
+
+            <label for="youtube_url">YouTube URL:</label><br>
+            <input type="url" id="youtube_url" name="youtube_url" required>
+
+            <input type="submit" value="Add Song">
+        </form>
+    </div>
+</body>
+</html>
