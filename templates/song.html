@@ -52,12 +52,12 @@
 
     <h1>{{ song.title }} <br><small>from {{ song.name }}</small></h1>
 
-    <iframe width="560" height="315" src="{{ song.url }}" allowfullscreen></iframe>
+    <iframe width="560" height="315" src="/karaoke{{ song.url }}" allowfullscreen></iframe>
 
     <div class="nav-links">
-        <a href="/songs/{{ song.id-1 }}">← Prev</a>
-        <a href="/songs">All Songs</a>
-        <a href="/songs/{{ song.id+1 }}">Next →</a>
+        <a href="/karaoke/songs/{{ song.id-1 }}">← Prev</a>
+        <a href="/karaoke/songs">All Songs</a>
+        <a href="/karaoke/songs/{{ song.id+1 }}">Next →</a>
     </div>
 
 </body>

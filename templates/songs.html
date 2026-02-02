@@ -82,13 +82,13 @@
         {% for id, title, url, name in songs %}
         <tr>
             <td>{{ name }}</td>
-            <td><a href="/songs/{{ id }}">{{ id }}</a></td>
+            <td><a href="/karaoke/songs/{{ id }}">{{ id }}</a></td>
             <td>{{ title }}</td>
-            <td><a href="{{ url }}" target="_blank">{{ url }}</a></td>
+            <td><a href="/karaoke/{{ url }}" target="_blank">{{ url }}</a></td>
         </tr>
         {% endfor %}
     </table>
 
-    <a class="add-link" href="/add_song">+ Add Another Song</a>
+    <a class="add-link" href="/karaoke/add_song">+ Add Another Song</a>
 </body>
 </html>
